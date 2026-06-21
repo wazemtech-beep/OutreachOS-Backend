@@ -21,6 +21,7 @@ await app.register(cors, {
 });
 await app.register(multipart);
 
+app.get("/", async () => ({ status: "ok", service: "OutreachOS API", version: "1.0.0" }));
 app.get("/health", async () => ({ status: "ok", timestamp: new Date().toISOString() }));
 
 await app.register(leadListRoutes, { prefix: "/api/v1" });
