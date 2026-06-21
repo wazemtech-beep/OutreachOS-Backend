@@ -33,7 +33,7 @@ await app.register(workerRoutes, { prefix: "/api/v1" });
 await app.register(deliverabilityRoutes, { prefix: "/api/v1" });
 await app.register(unsubscribeRoutes);
 
-const port = Number(process.env.API_PORT) || 5000;
+const port = Number(process.env.PORT) || Number(process.env.API_PORT) || 5000;
 
 try {
   await app.listen({ port, host: "0.0.0.0" });
